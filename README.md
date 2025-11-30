@@ -13,11 +13,11 @@ int ft_printf(const char *format, ...);
 
   Especificador   Descripción
   --------------- -----------------------------------------------
-  `%c`            Imprime un carácter
-  `%s`            Imprime una cadena
-  `%p`            Imprime un puntero en hexadecimal
-  `%d` / `%i`     Imprime un entero con signo
-  `%u`            Imprime un entero sin signo
-  `%x`            Imprime un número en hexadecimal (minúsculas)
-  `%X`            Imprime un número en hexadecimal (mayúsculas)
-  `%%`            Imprime el carácter `%`
+  `%c`            Imprime un carácter \
+  `%s`            Imprime una cadena \
+  `%p`            Imprime un puntero en hexadecimal \
+  `%d` / `%i`     Imprime un entero con signo \
+  `%u`            Imprime un entero sin signo \
+  `%x`            Imprime un número en hexadecimal (minúsculas) \
+  `%X`            Imprime un número en hexadecimal (mayúsculas) \
+  `%%`            Imprime el carácter `%` \
