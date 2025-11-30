@@ -19,15 +19,15 @@ static int	check_variable(va_list *ap, char c)
 	else if (c == 's')
 		return (ft_putstr(va_arg(*ap, char *)));
 	else if (c == 'p')
-		return (ft_putstr("0x") + ft_puthex(va_arg(*ap, size_t), 'x'));
+		return (ft_putstr("0x") + ft_putnbr_base(HEX_MINUS, va_arg(*ap, size_t)));
 	else if (c == 'd' || c == 'i')
-		return (ft_putnbr(va_arg(*ap, int)));
+		return (ft_putnbr_base(DEC, va_arg(*ap, int)));
 	else if (c == 'u')
-		return (ft_putnbr_unsig(va_arg(*ap, unsigned int)));
+		return (ft_putnbr_base(DEC, va_arg(*ap, unsigned int)));
 	else if (c == 'x')
-		return (ft_puthex(va_arg(*ap, unsigned int), 'x'));
+		return (ft_putnbr_base(HEX_MINUS, va_arg(*ap, unsigned int)));
 	else if (c == 'X')
-		return (ft_puthex(va_arg(*ap, unsigned int), 'X'));
+		return (ft_putnbr_base(HEX_MAYUS, va_arg(*ap, unsigned int)));
 	else if (c == '%')
 		return (ft_putchar('%'));
 	return (0);
@@ -60,25 +60,22 @@ int	ft_printf(char const *format, ...)
 	va_end(ap);
 	return (total);
 }
-
+/* 
 #include <stdio.h>
-#include <stdlib.h>
-#include <errno.h>
-#include <string.h>
 
 int main()
 {
 	int		i;
-	
+
 	ft_printf("\n");
-	
+
 	printf("%%c: %c\n", 'a');
 	i = ft_printf("%%c: %c\n", 'a');
 	ft_printf("Caracteres: %i\n\n", i);
 
-/* 	printf("%%s: NULL %s NULL\n", NULL);
-	i = ft_printf("%%s: NULL %s NULL\n", NULL);
-	ft_printf("Caracteres: %i\n\n", i); */
+	printf("%%s: NULL %s NULL\n", "hola");
+	i = ft_printf("%%s: NULL %s NULL\n", "hola");
+	ft_printf("Caracteres: %i\n\n", i);
 
 	printf("%%p: %p\n", &i);
 	i = ft_printf("%%p: %p\n", &i);
@@ -109,4 +106,4 @@ int main()
 	ft_printf("Caracteres: %i\n\n", i);
 
 	return (0);
-}
+} */
