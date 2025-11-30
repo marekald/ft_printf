@@ -1,14 +1,14 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marekald <marekald@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: marekald <marekald@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 19:44:42 by marekald          #+#    #+#             */
-/*   Updated: 2025/11/28 19:44:43 by marekald         ###   ########.fr       */
+/*   Updated: 2025/11/30 15:58:59 by marekald         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
@@ -19,13 +19,13 @@ static int	check_variable(va_list *ap, char c)
 	else if (c == 's')
 		return (ft_putstr(va_arg(*ap, char *)));
 	else if (c == 'p')
-		return (ft_putstr("0x") + ft_putnbr_base(HEX_MINUS, va_arg(*ap, size_t)));
+		return (ft_putstr("0x") + ft_putnbr_base(HEX_MIN, va_arg(*ap, size_t)));
 	else if (c == 'd' || c == 'i')
 		return (ft_putnbr_base(DEC, va_arg(*ap, int)));
 	else if (c == 'u')
 		return (ft_putnbr_base(DEC, va_arg(*ap, unsigned int)));
 	else if (c == 'x')
-		return (ft_putnbr_base(HEX_MINUS, va_arg(*ap, unsigned int)));
+		return (ft_putnbr_base(HEX_MIN, va_arg(*ap, unsigned int)));
 	else if (c == 'X')
 		return (ft_putnbr_base(HEX_MAYUS, va_arg(*ap, unsigned int)));
 	else if (c == '%')
