@@ -6,7 +6,7 @@
 /*   By: marekald <marekald@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 19:44:42 by marekald          #+#    #+#             */
-/*   Updated: 2025/11/30 15:58:59 by marekald         ###   ########.fr       */
+/*   Updated: 2025/11/30 16:40:35 by marekald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,19 @@
 
 static int	check_variable(va_list *ap, char c)
 {
+	void	*ptr;
+
+	ptr = va_arg(*ap, void *);
 	if (c == 'c')
 		return (ft_putchar(va_arg(*ap, int)));
 	else if (c == 's')
 		return (ft_putstr(va_arg(*ap, char *)));
 	else if (c == 'p')
-		return (ft_putstr("0x") + ft_putnbr_base(HEX_MIN, va_arg(*ap, size_t)));
+	{
+		if (!ptr)
+			return (write(1, "(nil)", 5));
+		return (ft_putstr("0x") + ft_putnbr_base(HEX_MIN, (size_t)ptr));
+	}
 	else if (c == 'd' || c == 'i')
 		return (ft_putnbr_base(DEC, va_arg(*ap, int)));
 	else if (c == 'u')
