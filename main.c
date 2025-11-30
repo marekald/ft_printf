@@ -6,14 +6,14 @@
 /*   By: marekald <marekald@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 15:56:42 by marekald          #+#    #+#             */
-/*   Updated: 2025/11/30 15:57:29 by marekald         ###   ########.fr       */
+/*   Updated: 2025/11/30 17:07:14 by marekald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "includes/ft_printf.h"
 
-int	main(void)
+/* int	main(void)
 {
 	int	r1, r2;
 
@@ -47,6 +47,12 @@ int	main(void)
 	printf("ret printf   = %d\n", r1);
 	printf("ret ft_printf= %d\n\n", r2);
 
+	printf("Test: Int\n");
+	r1 = printf("printf   : dec: %i\n", -2147483647);
+	r2 = ft_printf("ft_printf: hex: %i\n", -2147483647);
+	printf("ret printf   = %d\n", r1);
+	printf("ret ft_printf= %d\n\n", r2);
+	
 	printf("Test: Percent\n");
 	r1 = printf("printf   : Percent: %%\n");
 	r2 = ft_printf("ft_printf: Percent: %%\n");
@@ -66,4 +72,26 @@ int	main(void)
 	printf("ret ft_printf= %d\n\n", r2);
 
 	return 0;
+} */
+
+int main(void)
+{
+    int r1, r2;
+    char c = 'A';
+    char *s = "Hello";
+    int n = -42;
+    unsigned int u = 424242;
+    void *p = &n;
+
+    r1 = printf("printf   : c=%c s=%s p=%p d=%d i=%i u=%u x=%x X=%X %%\n",
+                c, s, p, n, n, u, u, u);
+
+    r2 = ft_printf("ft_printf: c=%c s=%s p=%p d=%d i=%i u=%u x=%x X=%X %%\n",
+                   c, s, p, n, n, u, u, u);
+
+    printf("ret printf   = %d\n", r1);
+    printf("ret ft_printf= %d\n", r2);
+
+    return 0;
 }
+

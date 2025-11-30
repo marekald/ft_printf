@@ -6,27 +6,21 @@
 /*   By: marekald <marekald@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 19:44:42 by marekald          #+#    #+#             */
-/*   Updated: 2025/11/30 16:40:35 by marekald         ###   ########.fr       */
+/*   Updated: 2025/11/30 16:56:20 by marekald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+#include <stdio.h>
 
 static int	check_variable(va_list *ap, char c)
 {
 	void	*ptr;
 
-	ptr = va_arg(*ap, void *);
 	if (c == 'c')
 		return (ft_putchar(va_arg(*ap, int)));
 	else if (c == 's')
 		return (ft_putstr(va_arg(*ap, char *)));
-	else if (c == 'p')
-	{
-		if (!ptr)
-			return (write(1, "(nil)", 5));
-		return (ft_putstr("0x") + ft_putnbr_base(HEX_MIN, (size_t)ptr));
-	}
 	else if (c == 'd' || c == 'i')
 		return (ft_putnbr_base(DEC, va_arg(*ap, int)));
 	else if (c == 'u')
@@ -37,6 +31,13 @@ static int	check_variable(va_list *ap, char c)
 		return (ft_putnbr_base(HEX_MAYUS, va_arg(*ap, unsigned int)));
 	else if (c == '%')
 		return (ft_putchar('%'));
+	else if (c == 'p')
+	{
+		ptr = va_arg(*ap, void *);
+		if (!ptr)
+			return (write(1, "(nil)", 5));
+		return (ft_putstr("0x") + ft_putnbr_base(HEX_MIN, (size_t)ptr));
+	}
 	return (0);
 }
 
