@@ -9,10 +9,8 @@ Este proyecto forma parte del cursus de 42, y su objetivo es recrear la funciona
 int ft_printf(const char *format, ...);
 ```
 
-## Funcionalidades --- Conversiones soportadas
+## Conversiones soportadas
 
-  Especificador   Descripción
-  --------------- -----------------------------------------------
   `%c`            Imprime un carácter \
   `%s`            Imprime una cadena \
   `%p`            Imprime un puntero en hexadecimal \
