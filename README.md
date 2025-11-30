@@ -18,4 +18,4 @@ int ft_printf(const char *format, ...);
   `%u`            Imprime un entero sin signo \
   `%x`            Imprime un número en hexadecimal (minúsculas) \
   `%X`            Imprime un número en hexadecimal (mayúsculas) \
-  `%%`            Imprime el carácter `%` \
+  `%%`            Imprime el carácter `%`
