@@ -14,13 +14,13 @@ Este proyecto forma parte del cursus de 42, y su objetivo es recrear la funciona
 -  `%X`            Imprime un número en hexadecimal (mayúsculas).
 -  `%%`            Imprime el carácter `%`.
 
-## Instructions
+# Instructions
 
 ``` c
 int ft_printf(const char *format, ...);
 ```
 
-## Resources
+# Resources
 
 ## Usage examples
 
