@@ -87,6 +87,8 @@ References used during development:
 
 ## AI Usage
 
-Artificial intelligence was used exclusively for:
-- Structuring the README and improving clarity
-- Formatting and English language refinement
+Artificial intelligence was used for:
+- Issue finding.
+- Providing needed context or information before aproaching the project.
+- Structuring the README and improving clarity.
+- Formatting and English language refinement.
