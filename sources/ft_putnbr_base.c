@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../include/ft_printf.h"
 
 int	ft_strlen(char *s)
 {
@@ -31,7 +31,7 @@ int	ft_putnbr_base(char *base, long n)
 	len = ft_strlen(base);
 	if (n < 0)
 	{
-		i += ft_putchar('-');
+		i += write(1, "-", 1);
 		n = n * -1;
 	}
 	if (n > (len - 1))

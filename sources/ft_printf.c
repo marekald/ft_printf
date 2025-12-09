@@ -10,8 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
-#include <stdio.h>
+#include "../include/ft_printf.h"
+
+int	ft_putchar(char c)
+{
+	write(1, &c, 1);
+	return (1);
+}
+
+int	ft_putstr(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		ft_putchar(s[i]);
+		i++;
+	}
+	return (i);
+}
 
 static int	check_variable(va_list *ap, char c)
 {
@@ -71,47 +89,20 @@ int	ft_printf(char const *format, ...)
 /* 
 #include <stdio.h>
 
-int main()
+int	main(void)
 {
-	int		i;
+	int		r1, r2;
+	char	c = 'A';
+	char	*s = "Hello";
+	int		n = -42;
+	unsigned	int u = 424242;
+	void	*p = &n;
 
-	ft_printf("\n");
-
-	printf("%%c: %c\n", 'a');
-	i = ft_printf("%%c: %c\n", 'a');
-	ft_printf("Caracteres: %i\n\n", i);
-
-	printf("%%s: NULL %s NULL\n", "hola");
-	i = ft_printf("%%s: NULL %s NULL\n", "hola");
-	ft_printf("Caracteres: %i\n\n", i);
-
-	printf("%%p: %p\n", &i);
-	i = ft_printf("%%p: %p\n", &i);
-	ft_printf("Caracteres: %i\n\n", i);
-
-	printf("%%d: %d\n", 1234567890);
-	i = ft_printf("%%d: %d\n", 1234567890);
-	ft_printf("Caracteres: %i\n\n", i);
-
-	printf("%%i: %i\n", 1234567890);
-	i = ft_printf("%%i: %i\n", 1234567890);
-	ft_printf("Caracteres: %i\n\n", i);
-
-	printf("%%u: %u\n", -1234567890);
-	i = ft_printf("%%u: %u\n", -1234567890);
-	ft_printf("Caracteres: %i\n\n", i);
-
-	printf("%%x: %x\n", 255);
-	i = ft_printf("%%x: %x\n", 255);
-	ft_printf("Caracteres: %i\n\n", i);
-
-	printf("%%X: %X\n", 255);
-	i = ft_printf("%%X: %X\n", 255);
-	ft_printf("Caracteres: %i\n\n", i);
-
-	printf("%%%%: %%\n");
-	i = ft_printf("%%%%: %%\n");
-	ft_printf("Caracteres: %i\n\n", i);
-
-	return (0);
-} */
+	r1 = printf("printf   : c=%c s=%s p=%p d=%d i=%i u=%u x=%x X=%X %%\n",
+				c, s, p, n, n, u, u, u);
+	r2 = ft_printf("ft_printf: c=%c s=%s p=%p d=%d i=%i u=%u x=%x X=%X %%\n",
+					c, s, p, n, n, u, u, u);
+	printf("ret printf   = %d\n", r1);
+	printf("ret ft_printf= %d\n", r2);
+}
+*/
