@@ -28,10 +28,10 @@ The function parses a format string, detects format specifiers, extracts corresp
 
 Use the provided Makefile:
 ```
-make       # Compile and create libftprintf.a
-make clean # Remove object files
-make fclean# Remove object files and the library
-make re    # Rebuild everything
+make        # Compile and create libftprintf.a
+make clean  # Remove object files
+make fclean # Remove object files and the library
+make re     # Rebuild everything
 ```
 
 ### Usage Example
@@ -55,9 +55,7 @@ cc main.c libftprintf.a -o test
 
 ### Algorithm Choice
 
-A lightweight parsing loop is used to traverse the format string. When a `%` character is detected, a small state machine identifies the following specifier and processes the appropriate argument.
-
-This approach is efficient, avoids unnecessary resource usage, and supports modular extension.
+A lightweight parsing loop is used to traverse the format string. When a `%` character is detected, identifies the following specifier and processes the appropriate argument.
 
 ### Data Structure & Function Justification
 
@@ -77,13 +75,12 @@ Key considerations:
 - Modular function design → easier debugging and maintenance
 - Efficient base conversion using reusable logic
 prin
+
 ## Resources
 
 References used during development:
-- Linux man pages for `printf` behavior
+- Linux man pages for `printf` behavior `man 3 printf`
 - Documentation on variadic functions (`stdarg.h`)
-- 42 school subject guidelines
-- Popular testers such as Tripouille’s printfTester
 
 ## AI Usage
 
@@ -91,4 +88,3 @@ Artificial intelligence was used for:
 - Issue finding.
 - Providing needed context or information before aproaching the project.
 - Structuring the README and improving clarity.
-- Formatting and English language refinement.

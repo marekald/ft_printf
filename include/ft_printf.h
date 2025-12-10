@@ -18,8 +18,6 @@
 # define HEX_MAYUS "0123456789ABCDEF"
 
 # include <unistd.h>
-# include <stddef.h>
-# include <stdlib.h>
 # include <stdarg.h>
 
 int	ft_printf(char const *format, ...);
